@@ -16,7 +16,7 @@ import {
   TableRow 
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Battery, Signal, ThermometerSnowflake, Droplets, Soil, Wind, Sun, CloudRain } from "lucide-react";
+import { Battery, Signal, ThermometerSnowflake, Droplets, Wheat, Wind, Sun, CloudRain } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SensorData {
@@ -49,7 +49,7 @@ const sensorsData: SensorData[] = [
     id: "S-002",
     name: "Sensor Humedad Suelo 1",
     type: "Humedad de suelo",
-    typeIcon: <Soil className="h-4 w-4" />,
+    typeIcon: <Wheat className="h-4 w-4" />,
     lastReading: 28,
     unit: "%",
     location: "Sector A2",

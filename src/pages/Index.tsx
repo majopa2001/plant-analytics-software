@@ -4,7 +4,7 @@ import { StatCard } from "@/components/dashboard/StatCard";
 import { SensorCard } from "@/components/dashboard/SensorCard";
 import { AlertCard } from "@/components/dashboard/AlertCard";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Plant, CloudRain, Thermometer, Droplets, Wind, Sun, Soil, CircleAlert } from "lucide-react";
+import { Sprout, CloudRain, Thermometer, Droplets, Wind, Sun, Wheat, AlertCircle } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 const data = [
@@ -29,7 +29,7 @@ const Index = () => {
         <StatCard 
           title="Hectáreas monitoreadas" 
           value="32.5" 
-          icon={Plant} 
+          icon={Sprout} 
           change={4.5} 
         />
         <StatCard 
@@ -41,7 +41,7 @@ const Index = () => {
         <StatCard 
           title="Alertas activas" 
           value="3" 
-          icon={CircleAlert} 
+          icon={AlertCircle} 
           change={-2} 
           iconColor="text-agro-terracota"
         />
@@ -154,7 +154,7 @@ const Index = () => {
             value={28}
             unit="%"
             status="critical"
-            icon={Soil}
+            icon={Wheat}
             lastUpdated="Hace 5 min"
             range={{ min: 25, max: 60 }}
           />
