@@ -57,7 +57,7 @@ const Sidebar = () => {
           <div className="h-8 w-8 rounded-full bg-agro-green flex items-center justify-center">
             <Leaf size={18} className="text-white" />
           </div>
-          <div className="font-montserrat font-bold text-lg tracking-tight text-agro-green">
+          <div className="font-montserrat font-bold text-lg tracking-tight text-white">
             Plant Analytics
           </div>
         </div>
