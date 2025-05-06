@@ -11,7 +11,7 @@ import {
   Settings, 
   LogOut,
   BarChart4,
-  Zap,
+  Leaf,
 } from "lucide-react";
 import { 
   Sidebar as SidebarComponent, 
@@ -55,10 +55,10 @@ const Sidebar = () => {
       <SidebarHeader className="flex items-center gap-2 px-4 py-3">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-agro-green flex items-center justify-center">
-            <Zap size={18} className="text-white" />
+            <Leaf size={18} className="text-white" />
           </div>
           <div className="font-montserrat font-bold text-lg tracking-tight text-agro-green">
-            AgroVision
+            Plant Analytics
           </div>
         </div>
       </SidebarHeader>

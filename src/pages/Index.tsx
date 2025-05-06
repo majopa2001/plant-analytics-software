@@ -20,8 +20,8 @@ const Index = () => {
   return (
     <Layout>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-2">Dashboard Principal</h1>
-        <p className="text-gray-500">Monitoreo de finca en tiempo real</p>
+        <h1 className="text-2xl font-bold mb-2">Plant Analytics Dashboard</h1>
+        <p className="text-gray-500">Monitoreo inteligente de cultivos con sensores y IA</p>
       </div>
       
       {/* Stats Overview */}
@@ -58,9 +58,9 @@ const Index = () => {
         {/* Left column: Chart */}
         <Card className="lg:col-span-2">
           <CardHeader>
-            <CardTitle>Tendencias del cultivo</CardTitle>
+            <CardTitle>Análisis de tendencias</CardTitle>
             <CardDescription>
-              Humedad, temperatura y precipitaciones de los últimos 6 meses
+              Datos de sensores multicanal de los últimos 6 meses
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -110,9 +110,9 @@ const Index = () => {
         {/* Right column: Alerts */}
         <Card>
           <CardHeader>
-            <CardTitle>Alertas recientes</CardTitle>
+            <CardTitle>Alertas IA</CardTitle>
             <CardDescription>
-              Notificaciones importantes sobre tus cultivos
+              Detección inteligente de anomalías en tus cultivos
             </CardDescription>
           </CardHeader>
           <CardContent className="max-h-[370px] overflow-auto">
@@ -147,7 +147,7 @@ const Index = () => {
       
       {/* Sensor readings */}
       <div className="mt-6">
-        <h2 className="text-lg font-semibold mb-4">Lecturas de sensores en tiempo real</h2>
+        <h2 className="text-lg font-semibold mb-4">Sensores multiespectro en tiempo real</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <SensorCard
             title="Humedad del suelo"

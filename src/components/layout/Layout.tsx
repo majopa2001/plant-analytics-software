@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
             {children}
           </main>
           <footer className="p-4 border-t text-center text-sm text-gray-500">
-            © {new Date().getFullYear()} AgroVision Perú - Transformando la agricultura con tecnología
+            © {new Date().getFullYear()} Plant Analytics - Monitoreo inteligente de cultivos
           </footer>
         </div>
       </div>
