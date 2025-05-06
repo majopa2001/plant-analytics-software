@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // Custom colors for AgroVision Peru
+                agro: {
+                    green: {
+                        DEFAULT: '#2D8E57',
+                        light: '#4CAF50',
+                        dark: '#1B5E20',
+                    },
+                    terracota: '#CC5500',
+                    skyblue: '#4DAEDB',
+                    soil: '#8B4513',
+                    yellow: '#FFD700',
+                    alert: '#FF5252',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +98,21 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'pulse-soft': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.7' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
+			},
+            fontFamily: {
+                montserrat: ['Montserrat', 'sans-serif'],
+                roboto: ['Roboto', 'sans-serif'],
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
