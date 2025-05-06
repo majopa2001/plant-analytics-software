@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -18,6 +17,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Battery, Signal, ThermometerSnowflake, Droplets, Wheat, Wind, Sun, CloudRain } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SensoresMap from "@/components/sensores/SensoresMap";
 
 interface SensorData {
   id: string;
@@ -124,6 +124,18 @@ const Sensores = () => {
         </TabsList>
         
         <TabsContent value="todos" className="space-y-4">
+          <Card className="mb-4">
+            <CardHeader>
+              <CardTitle>Mapa de sensores</CardTitle>
+              <CardDescription>
+                Ubicación geográfica de los sensores en la finca
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <SensoresMap />
+            </CardContent>
+          </Card>
+
           <Card>
             <CardHeader>
               <CardTitle>Todos los sensores</CardTitle>
@@ -205,20 +217,6 @@ const Sensores = () => {
                   ))}
                 </TableBody>
               </Table>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Mapa de sensores</CardTitle>
-              <CardDescription>
-                Ubicación geográfica de los sensores en la finca
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="relative w-full h-[400px] bg-gray-100 rounded-md flex items-center justify-center">
-                <p className="text-gray-500">Mapa interactivo de la finca (en desarrollo)</p>
-              </div>
             </CardContent>
           </Card>
         </TabsContent>
