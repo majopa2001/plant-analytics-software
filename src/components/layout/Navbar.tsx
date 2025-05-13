@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { Bell, ChevronDown, Search, User } from "lucide-react";
+import { Bell, ChevronDown, Search, User, BellDot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
   DropdownMenu,
@@ -10,9 +10,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/badge";
+import { useNotifications } from "@/context/NotificationsContext";
+import { NotificationsPopover } from "@/components/layout/NotificationsPopover";
 
 const Navbar = () => {
   const [farmName, setFarmName] = useState("Finca San Pedro");
+  const { unreadCount } = useNotifications();
 
   return (
     <header className="border-b bg-white">
@@ -53,14 +57,7 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="relative"
-            >
-              <Bell size={20} />
-              <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-agro-alert rounded-full"></span>
-            </Button>
+            <NotificationsPopover />
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
