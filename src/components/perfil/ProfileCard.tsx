@@ -1,18 +1,15 @@
 
+import { useState } from "react";
+import { Mail, Phone, MapPin, Building, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Mail, Phone, MapPin, Building, Calendar } from "lucide-react";
 import { toast } from "sonner";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Usuario } from "@/types/usuario";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Import icons as React components
 import { Pencil } from "@/components/icons/Pencil";
 import { Clock } from "@/components/icons/Clock";
 
@@ -37,7 +34,7 @@ export function ProfileCard({ usuario, isEditing, setIsEditing }: ProfileCardPro
             className="absolute bottom-0 right-0 rounded-full h-8 w-8 bg-white"
             onClick={() => toast.info("Funcionalidad de cambio de foto en desarrollo")}
           >
-            <Pencil size={14} />
+            <Pencil className="h-4 w-4" />
           </Button>
         </div>
         <CardTitle className="text-xl">{usuario.nombre}</CardTitle>
@@ -48,31 +45,31 @@ export function ProfileCard({ usuario, isEditing, setIsEditing }: ProfileCardPro
       </CardHeader>
       <CardContent className="space-y-4 text-sm pt-4">
         <div className="flex items-center gap-3">
-          <Mail size={16} className="text-gray-500" />
+          <Mail className="h-4 w-4 text-gray-500" />
           <span>{usuario.correo}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Phone size={16} className="text-gray-500" />
+          <Phone className="h-4 w-4 text-gray-500" />
           <span>{usuario.telefono}</span>
         </div>
         <div className="flex items-start gap-3">
-          <MapPin size={16} className="text-gray-500 mt-1" />
+          <MapPin className="h-4 w-4 text-gray-500 mt-1" />
           <span>{usuario.direccion}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Building size={16} className="text-gray-500" />
+          <Building className="h-4 w-4 text-gray-500" />
           <span>{usuario.empresa}</span>
         </div>
         <Separator />
         <div className="flex items-center gap-3">
-          <Calendar size={16} className="text-gray-500" />
+          <Calendar className="h-4 w-4 text-gray-500" />
           <div>
             <span className="block text-gray-600">Miembro desde:</span>
             <span>{usuario.fechaRegistro}</span>
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <Clock size={16} className="text-gray-500" />
+          <Clock className="h-4 w-4 text-gray-500" />
           <div>
             <span className="block text-gray-600">Último acceso:</span>
             <span>{usuario.ultimoAcceso}</span>

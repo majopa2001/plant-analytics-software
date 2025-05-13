@@ -7,6 +7,7 @@ import { QuickAccessCard } from "@/components/perfil/QuickAccessCard";
 import { FarmsTab } from "@/components/perfil/FarmsTab";
 import { ActivityTab } from "@/components/perfil/ActivityTab";
 import { AccountTab } from "@/components/perfil/AccountTab";
+import { NotificationsTab } from "@/components/perfil/NotificationsTab";
 import { Usuario, Finca, Actividad } from "@/types/usuario";
 
 const Perfil = () => {
@@ -95,9 +96,10 @@ const Perfil = () => {
         {/* Columna derecha - Tabs con información */}
         <div className="lg:col-span-2">
           <Tabs defaultValue="fincas">
-            <TabsList className="grid grid-cols-3 mb-4">
+            <TabsList className="grid grid-cols-4 mb-4">
               <TabsTrigger value="fincas">Mis fincas</TabsTrigger>
-              <TabsTrigger value="actividad">Actividad reciente</TabsTrigger>
+              <TabsTrigger value="actividad">Actividad</TabsTrigger>
+              <TabsTrigger value="notificaciones">Notificaciones</TabsTrigger>
               <TabsTrigger value="cuenta">Cuenta</TabsTrigger>
             </TabsList>
             
@@ -107,6 +109,10 @@ const Perfil = () => {
             
             <TabsContent value="actividad">
               <ActivityTab actividad={actividad} />
+            </TabsContent>
+
+            <TabsContent value="notificaciones">
+              <NotificationsTab />
             </TabsContent>
             
             <TabsContent value="cuenta">
