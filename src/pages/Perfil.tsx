@@ -8,6 +8,8 @@ import { FarmsTab } from "@/components/perfil/FarmsTab";
 import { ActivityTab } from "@/components/perfil/ActivityTab";
 import { AccountTab } from "@/components/perfil/AccountTab";
 import { NotificationsTab } from "@/components/perfil/NotificationsTab";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Usuario, Finca, Actividad } from "@/types/usuario";
 
 const Perfil = () => {
@@ -77,9 +79,19 @@ const Perfil = () => {
 
   return (
     <Layout>
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-2">Mi Perfil</h1>
-        <p className="text-gray-500">Administra tu información personal y preferencias</p>
+      <div className="mb-6 flex flex-row items-center gap-4">
+        <div className="hidden md:block">
+          <AspectRatio ratio={1} className="h-16 w-16 rounded-full overflow-hidden">
+            <Avatar className="h-16 w-16">
+              <AvatarImage src={usuario.avatar} alt={usuario.nombre} className="object-cover" />
+              <AvatarFallback>{usuario.nombre.slice(0, 2)}</AvatarFallback>
+            </Avatar>
+          </AspectRatio>
+        </div>
+        <div>
+          <h1 className="text-2xl font-bold mb-2">Mi Perfil</h1>
+          <p className="text-gray-500">Administra tu información personal y preferencias</p>
+        </div>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -112,7 +124,7 @@ const Perfil = () => {
             </TabsContent>
 
             <TabsContent value="notificaciones">
-              <NotificationsTab />
+              <NotificationsTab userAvatar={usuario.avatar} userName={usuario.nombre} />
             </TabsContent>
             
             <TabsContent value="cuenta">

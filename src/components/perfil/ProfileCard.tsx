@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { toast } from "sonner";
 import { Usuario } from "@/types/usuario";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,10 +25,12 @@ export function ProfileCard({ usuario, isEditing, setIsEditing }: ProfileCardPro
     <Card>
       <CardHeader className="flex flex-col items-center text-center pb-2">
         <div className="relative mb-2">
-          <Avatar className="h-24 w-24">
-            <AvatarImage src={usuario.avatar} alt={usuario.nombre} />
-            <AvatarFallback>{usuario.nombre.slice(0, 2)}</AvatarFallback>
-          </Avatar>
+          <AspectRatio ratio={1} className="h-24 w-24 overflow-hidden rounded-full">
+            <Avatar className="h-24 w-24">
+              <AvatarImage src={usuario.avatar} alt={usuario.nombre} className="object-cover" />
+              <AvatarFallback>{usuario.nombre.slice(0, 2)}</AvatarFallback>
+            </Avatar>
+          </AspectRatio>
           <Button
             variant="outline"
             size="icon"

@@ -5,10 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useNotifications } from "@/context/NotificationsContext";
 import { NotificationsPopover } from "@/components/layout/NotificationsPopover";
 
-export function NotificationsTab() {
+interface NotificationsTabProps {
+  userAvatar?: string;
+  userName?: string;
+}
+
+export function NotificationsTab({ userAvatar, userName = "Usuario" }: NotificationsTabProps) {
   const { notifications, addNotification } = useNotifications();
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -24,7 +30,8 @@ export function NotificationsTab() {
         title,
         message,
         type,
-        timestamp
+        timestamp,
+        avatar: userAvatar
       });
       
       // Reset form
@@ -38,8 +45,18 @@ export function NotificationsTab() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Centro de Notificaciones</CardTitle>
-          <CardDescription>Administra y crea notificaciones para probar el sistema</CardDescription>
+          <div className="flex items-center space-x-4">
+            {userAvatar && (
+              <Avatar>
+                <AvatarImage src={userAvatar} alt={userName} />
+                <AvatarFallback>{userName?.slice(0, 2)}</AvatarFallback>
+              </Avatar>
+            )}
+            <div>
+              <CardTitle>Centro de Notificaciones</CardTitle>
+              <CardDescription>Administra y crea notificaciones para probar el sistema</CardDescription>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-between mb-4">
