@@ -30,8 +30,8 @@ export function NotificationsTab({ userAvatar, userName = "Usuario" }: Notificat
         title,
         message,
         type,
-        timestamp,
-        avatar: userAvatar
+        timestamp
+        // Removed the avatar property since it's not in the Notification type
       });
       
       // Reset form
