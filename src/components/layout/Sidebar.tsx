@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { 
   Home, 
@@ -25,10 +24,11 @@ import {
   SidebarMenuItem,
   SidebarMenuButton
 } from "@/components/ui/sidebar";
-import { cn } from "@/lib/utils";
+import { useAuth } from "@/context/AuthContext";
 
 const Sidebar = () => {
   const location = useLocation();
+  const { logout } = useAuth();
   
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -50,11 +50,15 @@ const Sidebar = () => {
     { name: "Configuración", icon: Settings, path: "/configuracion" },
   ];
 
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
-    <SidebarComponent className="border-r">
-      <SidebarHeader className="flex items-center gap-2 px-4 py-3">
+    <SidebarComponent className="border-r border-agro-gray-200">
+      <SidebarHeader className="flex items-center gap-2 px-4 py-3 gradient-bg">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-agro-green flex items-center justify-center">
+          <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
             <Leaf size={18} className="text-white" />
           </div>
           <div className="font-montserrat font-bold text-lg tracking-tight text-white">
@@ -63,15 +67,21 @@ const Sidebar = () => {
         </div>
       </SidebarHeader>
       
-      <SidebarContent>
+      <SidebarContent className="bg-white">
         <SidebarGroup>
-          <SidebarGroupLabel>Principal</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-agro-gray-600 font-montserrat">Principal</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {navigationItems.map((item) => (
                 <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton asChild className={isActive(item.path) ? "bg-sidebar-accent text-sidebar-accent-foreground" : ""}>
-                    <Link to={item.path} className="flex items-center gap-3">
+                  <SidebarMenuButton 
+                    asChild 
+                    className={`${isActive(item.path) 
+                      ? "bg-agro-green/10 text-agro-green border-r-2 border-agro-green font-medium" 
+                      : "text-agro-gray-700 hover:bg-agro-gray-50 hover:text-agro-green"
+                    } transition-all duration-200`}
+                  >
+                    <Link to={item.path} className="flex items-center gap-3 px-3 py-2.5">
                       <item.icon size={18} />
                       <span>{item.name}</span>
                     </Link>
@@ -83,13 +93,19 @@ const Sidebar = () => {
         </SidebarGroup>
         
         <SidebarGroup>
-          <SidebarGroupLabel>Usuario</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-agro-gray-600 font-montserrat">Usuario</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {userNavigationItems.map((item) => (
                 <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton asChild className={isActive(item.path) ? "bg-sidebar-accent text-sidebar-accent-foreground" : ""}>
-                    <Link to={item.path} className="flex items-center gap-3">
+                  <SidebarMenuButton 
+                    asChild 
+                    className={`${isActive(item.path) 
+                      ? "bg-agro-green/10 text-agro-green border-r-2 border-agro-green font-medium" 
+                      : "text-agro-gray-700 hover:bg-agro-gray-50 hover:text-agro-green"
+                    } transition-all duration-200`}
+                  >
+                    <Link to={item.path} className="flex items-center gap-3 px-3 py-2.5">
                       <item.icon size={18} />
                       <span>{item.name}</span>
                     </Link>
@@ -101,9 +117,12 @@ const Sidebar = () => {
         </SidebarGroup>
       </SidebarContent>
       
-      <SidebarFooter>
+      <SidebarFooter className="border-t border-agro-gray-200 bg-agro-gray-50">
         <div className="px-3 py-2">
-          <button className="w-full flex items-center gap-2 px-3 py-2 text-gray-700 rounded-md hover:bg-gray-100 transition">
+          <button 
+            onClick={handleLogout}
+            className="w-full flex items-center gap-2 px-3 py-2.5 text-agro-gray-700 rounded-lg hover:bg-agro-alert/10 hover:text-agro-alert transition-all duration-200"
+          >
             <LogOut size={18} />
             <span>Cerrar sesión</span>
           </button>

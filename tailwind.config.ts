@@ -63,18 +63,31 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Custom colors for AgroVision Peru
+                // Updated modern colors for AgroVision Peru
                 agro: {
                     green: {
-                        DEFAULT: '#2D8E57',
-                        light: '#4CAF50',
-                        dark: '#1B5E20',
+                        DEFAULT: '#1B4332',
+                        light: '#2D5A3D',
+                        dark: '#0F2E1F',
+                        bright: '#52B788',
                     },
-                    terracota: '#CC5500',
-                    skyblue: '#4DAEDB',
-                    soil: '#8B4513',
-                    yellow: '#FFD700',
-                    alert: '#FF5252',
+                    terracota: '#B85450',
+                    skyblue: '#277DA1',
+                    soil: '#6F4E37',
+                    yellow: '#F9C74F',
+                    alert: '#F94144',
+                    gray: {
+                        50: '#F8FAFC',
+                        100: '#F1F5F9',
+                        200: '#E2E8F0',
+                        300: '#CBD5E1',
+                        400: '#94A3B8',
+                        500: '#64748B',
+                        600: '#475569',
+                        700: '#334155',
+                        800: '#1E293B',
+                        900: '#0F172A',
+                    }
                 }
 			},
 			borderRadius: {
@@ -102,12 +115,17 @@ export default {
                 'pulse-soft': {
                     '0%, 100%': { opacity: '1' },
                     '50%': { opacity: '0.7' }
+                },
+                'fade-in': {
+                    '0%': { opacity: '0', transform: 'translateY(10px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' }
                 }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-                'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
+                'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+                'fade-in': 'fade-in 0.3s ease-out'
 			},
             fontFamily: {
                 montserrat: ['Montserrat', 'sans-serif'],
