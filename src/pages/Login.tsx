@@ -42,33 +42,33 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center gradient-bg p-4">
-      <div className="absolute inset-0 bg-gradient-to-br from-agro-green via-agro-green-light to-agro-green-dark opacity-90"></div>
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-agro-green via-agro-green-light to-agro-green-dark">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
       
-      <Card className="w-full max-w-md relative z-10 glass-effect border-0 shadow-2xl">
-        <CardHeader className="space-y-1 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="h-12 w-12 rounded-full bg-agro-green flex items-center justify-center">
-              <Leaf size={24} className="text-white" />
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse-soft"></div>
+      <div className="absolute bottom-20 right-20 w-24 h-24 bg-agro-green-bright/20 rounded-full blur-xl animate-pulse-soft delay-1000"></div>
+      
+      <Card className="w-full max-w-md relative z-10 backdrop-blur-lg bg-white/95 border-0 shadow-2xl">
+        <CardHeader className="space-y-4 text-center pb-6">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-agro-green to-agro-green-light flex items-center justify-center shadow-lg">
+              <Leaf size={32} className="text-white" />
             </div>
-            <div className="font-montserrat font-bold text-2xl text-agro-green">
+            <div className="font-montserrat font-bold text-3xl bg-gradient-to-r from-agro-green to-agro-green-light bg-clip-text text-transparent">
               Plant Analytics
             </div>
           </div>
-          <CardTitle className="text-2xl font-montserrat">Iniciar Sesión</CardTitle>
-          <CardDescription>
-            Ingresa tus credenciales para acceder al dashboard
+          <CardTitle className="text-2xl font-montserrat text-agro-gray-800">Acceso al Sistema</CardTitle>
+          <CardDescription className="text-agro-gray-600">
+            Ingresa tus credenciales para acceder al dashboard de monitoreo
           </CardDescription>
-          <div className="text-sm text-agro-gray-600 mt-4 p-3 bg-agro-gray-100 rounded-lg">
-            <p className="font-medium">Credenciales de prueba:</p>
-            <p>Usuario: <code className="bg-white px-1 rounded">usuario123</code></p>
-            <p>Contraseña: <code className="bg-white px-1 rounded">123456</code></p>
-          </div>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <CardContent className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="username">Usuario</Label>
+              <Label htmlFor="username" className="text-agro-gray-700 font-medium">Usuario</Label>
               <Input
                 id="username"
                 type="text"
@@ -76,11 +76,11 @@ const Login = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                className="h-11"
+                className="h-12 border-agro-gray-300 focus:border-agro-green focus:ring-agro-green/20 rounded-xl transition-all duration-200"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Contraseña</Label>
+              <Label htmlFor="password" className="text-agro-gray-700 font-medium">Contraseña</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -89,25 +89,32 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="h-11 pr-10"
+                  className="h-12 pr-12 border-agro-gray-300 focus:border-agro-green focus:ring-agro-green/20 rounded-xl transition-all duration-200"
                 />
                 <Button
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="absolute right-0 top-0 h-11 w-11"
+                  className="absolute right-0 top-0 h-12 w-12 text-agro-gray-500 hover:text-agro-green"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </Button>
               </div>
             </div>
             <Button 
               type="submit" 
-              className="w-full h-11 bg-agro-green hover:bg-agro-green-dark" 
+              className="w-full h-12 bg-gradient-to-r from-agro-green to-agro-green-light hover:from-agro-green-dark hover:to-agro-green text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5" 
               disabled={isLoading}
             >
-              {isLoading ? "Iniciando sesión..." : "Iniciar Sesión"}
+              {isLoading ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+                  Iniciando sesión...
+                </div>
+              ) : (
+                "Iniciar Sesión"
+              )}
             </Button>
           </form>
         </CardContent>

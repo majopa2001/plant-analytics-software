@@ -63,30 +63,30 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Updated modern colors for AgroVision Peru
+                // Modern color palette for Plant Analytics
                 agro: {
                     green: {
-                        DEFAULT: '#1B4332',
-                        light: '#2D5A3D',
-                        dark: '#0F2E1F',
-                        bright: '#52B788',
+                        DEFAULT: '#0F2E1F', // Dark forest green
+                        light: '#1B4332',   // Medium forest green  
+                        dark: '#081A0F',    // Very dark green
+                        bright: '#40916C',  // Bright accent green
                     },
-                    terracota: '#B85450',
-                    skyblue: '#277DA1',
-                    soil: '#6F4E37',
-                    yellow: '#F9C74F',
-                    alert: '#F94144',
+                    terracota: '#B85450',    // Warm terracotta
+                    skyblue: '#277DA1',      // Professional blue
+                    soil: '#6F4E37',         // Rich soil brown
+                    yellow: '#F9C74F',       // Bright yellow
+                    alert: '#F94144',        // Alert red
                     gray: {
-                        50: '#F8FAFC',
-                        100: '#F1F5F9',
-                        200: '#E2E8F0',
-                        300: '#CBD5E1',
-                        400: '#94A3B8',
-                        500: '#64748B',
-                        600: '#475569',
-                        700: '#334155',
-                        800: '#1E293B',
-                        900: '#0F172A',
+                        50: '#FAFAFA',       // Almost white
+                        100: '#F4F4F5',      // Very light gray
+                        200: '#E4E4E7',      // Light gray
+                        300: '#D4D4D8',      // Medium light gray
+                        400: '#A1A1AA',      // Medium gray
+                        500: '#71717A',      // Dark medium gray
+                        600: '#52525B',      // Dark gray
+                        700: '#3F3F46',      // Very dark gray
+                        800: '#27272A',      // Almost black gray
+                        900: '#18181B',      // Very dark
                     }
                 }
 			},
@@ -114,9 +114,13 @@ export default {
 				},
                 'pulse-soft': {
                     '0%, 100%': { opacity: '1' },
-                    '50%': { opacity: '0.7' }
+                    '50%': { opacity: '0.6' }
                 },
                 'fade-in': {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' }
+                },
+                'slide-up': {
                     '0%': { opacity: '0', transform: 'translateY(10px)' },
                     '100%': { opacity: '1', transform: 'translateY(0)' }
                 }
@@ -124,12 +128,18 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-                'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
-                'fade-in': 'fade-in 0.3s ease-out'
+                'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+                'fade-in': 'fade-in 0.5s ease-out',
+                'slide-up': 'slide-up 0.3s ease-out'
 			},
             fontFamily: {
                 montserrat: ['Montserrat', 'sans-serif'],
                 roboto: ['Roboto', 'sans-serif'],
+            },
+            boxShadow: {
+                'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+                'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
+                'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 40px -10px rgba(0, 0, 0, 0.1)',
             }
 		}
 	},
