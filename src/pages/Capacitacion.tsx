@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Pencil, GraduationCap, Play, Clock, User } from "lucide-react";
+import { BookOpen, Pencil, GraduationCap, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const Capacitacion = () => {
