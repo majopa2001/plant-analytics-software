@@ -37,12 +37,12 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-agro-gray-700 font-medium">
-                Correo electrónico
+                Usuario
               </Label>
               <Input
                 id="email"
-                type="email"
-                placeholder="usuario@plantanalytics.com"
+                type="text"
+                placeholder="usuario123"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="border-agro-gray-200 focus:border-agro-green focus:ring-agro-green/20"
@@ -71,7 +71,7 @@ const Login = () => {
             </Button>
           </form>
           <div className="text-center text-sm text-agro-gray-500 mt-4">
-            <p>Demo: cualquier email y contraseña</p>
+            <p>Demo: usuario123 / 123456</p>
           </div>
         </CardContent>
       </Card>
