@@ -37,7 +37,7 @@ const Capacitacion = () => {
       modulos: 8,
       completados: 6,
       duracion: "6 horas",
-      imagen: "https://images.unsplash.com/photo-1626908013351-800ddd7b196c?q=80&w=2942&auto=format&fit=crop",
+      imagen: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3",
       categoria: "Básico"
     },
     {
@@ -110,7 +110,7 @@ const Capacitacion = () => {
     <div className="animate-fade-in">
       <div className="mb-8">
         <h1 className="text-3xl font-montserrat font-bold mb-3 text-agro-gray-800">Centro de Capacitación</h1>
-        <p className="text-agro-gray-600 text-lg">Recursos educativos para optimizar el uso de Plant Analytics</p>
+        <p className="text-agro-gray-600 text-lg">Recursos educativos para optimizar el uso de sIAmbra</p>
       </div>
       
       <Card className="mb-8 overflow-hidden border-0 shadow-xl bg-gradient-to-r from-agro-green/5 via-agro-green-bright/5 to-agro-green/5">

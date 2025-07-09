@@ -59,7 +59,7 @@ const Login = () => {
               <Leaf size={32} className="text-white" />
             </div>
             <div className="font-montserrat font-bold text-3xl bg-gradient-to-r from-agro-green to-agro-green-light bg-clip-text text-transparent">
-              Plant Analytics
+              sIAmbra
             </div>
           </div>
           <CardTitle className="text-2xl font-montserrat text-agro-gray-800">Acceso al Sistema</CardTitle>

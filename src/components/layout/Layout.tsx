@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           </main>
           <footer className="p-4 border-t border-agro-gray-200 text-center text-sm text-agro-gray-600 bg-white">
-            © {new Date().getFullYear()} Plant Analytics - Monitoreo inteligente de cultivos con IA
+            © {new Date().getFullYear()} sIAmbra - Monitoreo inteligente de cultivos con IA
           </footer>
         </div>
       </div>
