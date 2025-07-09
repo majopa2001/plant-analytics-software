@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProfileCard } from "@/components/perfil/ProfileCard";
 import { QuickAccessCard } from "@/components/perfil/QuickAccessCard";
@@ -76,7 +74,7 @@ const Perfil = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2">Mi Perfil</h1>
         <p className="text-gray-500">Administra tu información personal y preferencias</p>
@@ -125,7 +123,7 @@ const Perfil = () => {
           </Tabs>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-import Layout from "@/components/layout/Layout";
 import {
   Card,
   CardContent,
@@ -28,7 +26,6 @@ import { Button } from "@/components/ui/button";
 const Prediccion = () => {
   const [activeModel, setActiveModel] = useState("rendimiento");
   
-  // Datos de predicción de rendimiento
   const rendimientoData = [
     { mes: 'Ene', prediccion: 68, real: 65 },
     { mes: 'Feb', prediccion: 72, real: 70 },
@@ -44,7 +41,6 @@ const Prediccion = () => {
     { mes: 'Dic', prediccion: 84, real: null }
   ];
   
-  // Datos de predicción de enfermedades
   const enfermedadesData = [
     { nombre: 'Roya', probabilidad: 78, impacto: 'Alto' },
     { nombre: 'Mildiu', probabilidad: 45, impacto: 'Medio' },
@@ -53,7 +49,6 @@ const Prediccion = () => {
     { nombre: 'Alternaria', probabilidad: 18, impacto: 'Bajo' }
   ];
   
-  // Datos de análisis de riesgo
   const riesgosData = [
     { tipo: 'Sequía', probabilidad: 65 },
     { tipo: 'Inundación', probabilidad: 15 },
@@ -62,7 +57,6 @@ const Prediccion = () => {
     { tipo: 'Nutrientes', probabilidad: 25 }
   ];
   
-  // Datos optimización recursos
   const optimizacionData = [
     { recurso: 'Agua', actual: 100, optimizado: 82 },
     { recurso: 'Fertilizantes', actual: 100, optimizado: 75 },
@@ -72,7 +66,7 @@ const Prediccion = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2">IA Predictiva</h1>
         <p className="text-gray-500">Análisis y predicciones impulsados por inteligencia artificial</p>
@@ -321,7 +315,7 @@ const Prediccion = () => {
           </Card>
         </TabsContent>
       </Tabs>
-    </Layout>
+    </>
   );
 };
 

@@ -1,5 +1,3 @@
-
-import Layout from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -76,7 +74,7 @@ const precipitacionMensualData = [
 
 const Monitoreo = () => {
   return (
-    <Layout>
+    <>
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2">Monitoreo en Tiempo Real</h1>
         <p className="text-gray-500">Visualiza datos de tus sensores en gráficas detalladas</p>
@@ -327,7 +325,7 @@ const Monitoreo = () => {
           </CardContent>
         </Card>
       </div>
-    </Layout>
+    </>
   );
 };
 

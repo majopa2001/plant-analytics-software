@@ -109,7 +109,7 @@ const sensorsData: SensorData[] = [
 
 const Sensores = () => {
   return (
-    <Layout>
+    <>
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2">Monitoreo de Sensores</h1>
         <p className="text-gray-500">Administra y visualiza los datos de tus sensores IoT</p>
@@ -263,7 +263,7 @@ const Sensores = () => {
           </Card>
         </TabsContent>
       </Tabs>
-    </Layout>
+    </>
   );
 };
 
