@@ -62,7 +62,7 @@ const Sidebar = () => {
             <Leaf size={18} className="text-white" />
           </div>
           <div className="font-montserrat font-bold text-lg tracking-tight text-white">
-            sIAmbra
+            Plant Analytics
           </div>
         </div>
       </SidebarHeader>

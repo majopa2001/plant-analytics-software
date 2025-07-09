@@ -1,5 +1,4 @@
 
-import Layout from "@/components/layout/Layout";
 import { AlertCard } from "@/components/dashboard/AlertCard";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -94,7 +93,7 @@ const alertsData: Alert[] = [
 
 const Alertas = () => {
   return (
-    <Layout>
+    <>
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2">Sistema de Alertas</h1>
         <p className="text-gray-500">Monitorea y gestiona alertas de tu finca</p>
@@ -220,7 +219,7 @@ const Alertas = () => {
           </Card>
         </TabsContent>
       </Tabs>
-    </Layout>
+    </>
   );
 };
 
